@@ -422,7 +422,7 @@ label {
 	font-family: 'Open Sans', sans-serif;
 	float: left;
 }
-#contact .form-control {
+/* #contact .form-control {
 	display: block;
 	width: 100%;
 	padding: 6px 12px;
@@ -456,7 +456,14 @@ color: black;
 }
 .form-control:-ms-input-placeholder {
 color: #777;
+} */
+
+.contact-item-one{
+	display: flex;
 }
+
+
+
 #contact .contact-item {
 	margin: 20px 0 40px 0;
 }
