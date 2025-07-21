@@ -1,0 +1,1536 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SPACE CRAFT</title>
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+  <!-- Favicons
+    ================================================== -->
+  <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
+  <link rel="apple-touch-icon" href="img/apple-touch-icon.png" />
+  <link rel="apple-touch-icon" sizes="72x72" href="img/apple-touch-icon-72x72.png" />
+  <link rel="apple-touch-icon" sizes="114x114" href="img/apple-touch-icon-114x114.png" />
+  <link rel="stylesheet" href="./css/header.css" />
+
+  <!-- icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+  <!-- Bootstrap -->
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+
+  <!-- Stylesheet
+    ================================================== -->
+  <link rel="stylesheet" type="text/css" href="css/style.css" />
+  <style>
+    /* Reset and Base Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* Categories Container */
+    .categories {
+      width: 100%;
+      padding: 20px;
+      background: #f8f9fa23;
+      border-radius: 8px;
+      margin: 20px 0;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Main Category List */
+    .categories .cat {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+    }
+
+    .categories .cat>li {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+    }
+
+    /* Type List (Filter Navigation) */
+    .categories .type {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 15px;
+      width: 100%;
+    }
+
+    .categories .type li {
+      display: inline-block;
+    }
+
+    /* Filter Links */
+    .categories .type li a {
+      display: inline-block;
+      padding: 12px 24px;
+      text-decoration: none;
+      color: #333;
+      background: #fff;
+      border: 2px solid #e0e0e0;
+      border-radius: 25px;
+      font-size: 14px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Hover Effects */
+    .categories .type li a:hover {
+      background: #1dc731;
+      color: #010101;
+      border-color: #007bff;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 15px rgba(0, 123, 255, 0.3);
+    }
+
+    /* Active State */
+    .categories .type li a.active {
+      background: #50e306;
+      color: #000000;
+      border-color: #007bff;
+      box-shadow: 0 4px 15px rgba(0, 123, 255, 0.3);
+    }
+
+    /* Clearfix */
+    .clearfix::after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+
+/* map media query start */
+
+
+/* map media query end */
+
+    /* MEDIA QUERIES - RESPONSIVE DESIGN */
+
+    /* Extra Large Devices (Large Desktops, 1200px and up) */
+    @media (min-width: 1200px) {
+      .categories {
+        padding: 25px 40px;
+        margin: 30px 0;
+      }
+
+      .categories .type {
+        gap: 20px;
+      }
+
+      .categories .type li a {
+        padding: 15px 30px;
+        font-size: 16px;
+      }
+    }
+
+    /* Large Devices (Desktops, 992px and up) */
+    @media (min-width: 992px) and (max-width: 1199.98px) {
+      .categories {
+        padding: 20px 30px;
+      }
+
+      .categories .type {
+        gap: 18px;
+      }
+
+      .categories .type li a {
+        padding: 14px 28px;
+        font-size: 15px;
+      }
+    }
+
+    /* Medium Devices (Tablets, 768px and up) */
+    @media (min-width: 768px) and (max-width: 991.98px) {
+      .categories {
+        padding: 18px 25px;
+      }
+
+      .categories .type {
+        gap: 15px;
+      }
+
+      .categories .type li a {
+        padding: 12px 24px;
+        font-size: 14px;
+      }
+    }
+
+    /* Small Devices (Landscape Phones, 576px and up) */
+    @media (min-width: 576px) and (max-width: 767.98px) {
+      .categories {
+        padding: 15px 20px;
+      }
+
+      .categories .type {
+        gap: 12px;
+        justify-content: center;
+      }
+
+      .categories .type li a {
+        padding: 10px 20px;
+        font-size: 13px;
+      }
+    }
+
+    /* Extra Small Devices (Portrait Phones, less than 576px) */
+    @media (max-width: 575.98px) {
+      .categories {
+        padding: 12px 15px;
+        margin: 15px 0;
+      }
+
+      .categories .type {
+        gap: 8px;
+        justify-content: center;
+      }
+
+      .categories .type li {
+        flex: 0 0 auto;
+      }
+
+      .categories .type li a {
+        padding: 8px 16px;
+        font-size: 12px;
+        border-radius: 20px;
+        white-space: nowrap;
+      }
+    }
+
+    /* Very Small Devices (320px and below) */
+    @media (max-width: 320px) {
+      .categories {
+        padding: 10px 12px;
+      }
+
+      .categories .type {
+        gap: 6px;
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .categories .type li {
+        width: 100%;
+      }
+
+      .categories .type li a {
+        padding: 10px 15px;
+        font-size: 11px;
+        text-align: center;
+        border-radius: 15px;
+      }
+    }
+
+    /* Landscape Orientation for Mobile */
+    @media (max-width: 767.98px) and (orientation: landscape) {
+      .categories {
+        padding: 10px 15px;
+      }
+
+      .categories .type {
+        gap: 10px;
+      }
+
+      .categories .type li a {
+        padding: 8px 18px;
+        font-size: 12px;
+      }
+    }
+
+    /* High DPI Displays */
+    @media (-webkit-min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi) {
+      .categories .type li a {
+        border-width: 1px;
+      }
+    }
+
+    /* Dark Mode Support */
+    @media (prefers-color-scheme: dark) {
+      .categories {
+        background: transparent;
+        color: #050505;
+        border-radius: 0  50px 0 50px;
+      }
+
+      .categories .type li a {
+        background: #f4f6f3;
+        color: #2c2c2d;
+        border-color: #a7c44c;
+        border-radius: 0 15px 0 15px;
+      }
+
+      .categories .type li a:hover,
+      .categories .type li a.active {
+        background: #A7C44C;
+        border-color: #a7c44c;
+        color: #2c2c2d;
+      }
+    }
+
+    /* Reduced Motion for Accessibility */
+    @media (prefers-reduced-motion: reduce) {
+      .categories .type li a {
+        transition: none;
+      }
+
+      .categories .type li a:hover {
+        transform: none;
+      }
+    }
+
+    /* Print Styles */
+    @media print {
+      .categories {
+        background: none;
+        box-shadow: none;
+        border: 1px solid #000;
+      }
+
+      .categories .type li a {
+        background: none;
+        color: #000;
+        border: 1px solid #000;
+      }
+    }
+    /* map */
+    .map-container {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25%; 
+    overflow: hidden;
+    margin-bottom: 30px;
+}
+
+.map-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+
+
+.container-services {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        /* Services Section */
+        #services {
+            padding: 80px 0;
+            background: #f8f9fa;
+        }
+
+        .section-title {
+            margin-bottom: 60px;
+            text-align: center;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .section-title hr {
+            width: 80px;
+            height: 3px;
+            background: #a7c44c;
+            border: none;
+            margin: 20px auto;
+        }
+
+        .section-title p {
+            font-size: 1.1rem;
+            color: #7f8c8d;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Services Grid */
+        .services-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .service {
+            background: #A7C44C;
+            border-radius: 0 50px 0 50px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .service:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
+
+        .service-image {
+            width: 100%;
+            height: 250px;
+            overflow: hidden;
+            margin-bottom: 15px;
+        }
+
+        .service img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .service:hover img {
+            transform: scale(1.05);
+        }
+
+        .service h3 {
+            padding: 20px;
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: #2c3e50;
+            text-align: center;
+            margin: 0;
+        }
+
+        /* Mobile Devices (up to 575px) */
+        @media (max-width: 575px) {
+            #services {
+                padding: 50px 0;
+            }
+
+            .container-services {
+                padding: 0 10px;
+            }
+
+            .section-title {
+                margin-bottom: 40px;
+            }
+
+            .section-title h2 {
+                font-size: 1.8rem;
+                margin-bottom: 15px;
+            }
+
+            .section-title hr {
+                width: 60px;
+                height: 2px;
+                margin: 15px auto;
+            }
+
+            .section-title p {
+                font-size: 1rem;
+                padding: 0 10px;
+            }
+
+            .services-grid {
+                gap: 20px;
+                grid-template-columns: 1fr;
+            }
+
+            .service {
+                border-radius: 8px;
+            }
+
+            .service-image {
+                height: 200px;
+                margin-bottom: 10px;
+            }
+
+            .service h3 {
+                padding: 15px;
+                font-size: 1.2rem;
+            }
+        }
+
+        /* Small Tablets (576px to 767px) */
+        @media (min-width: 576px) and (max-width: 767px) {
+            #services {
+                padding: 60px 0;
+            }
+
+            .section-title h2 {
+                font-size: 2.2rem;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+
+            .service-image {
+                height: 220px;
+                margin-bottom: 12px;
+            }
+
+            .service h3 {
+                font-size: 1.3rem;
+            }
+        }
+
+        /* Tablets (768px to 991px) */
+        @media (min-width: 768px) and (max-width: 991px) {
+            #services {
+                padding: 70px 0;
+            }
+
+            .section-title h2 {
+                font-size: 2.3rem;
+            }
+
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 30px;
+            }
+
+            .service-image {
+                height: 230px;
+                margin-bottom: 15px;
+            }
+
+            .service h3 {
+                font-size: 1.35rem;
+            }
+        }
+
+        /* Small Desktops (992px to 1199px) */
+        @media (min-width: 992px) and (max-width: 1199px) {
+            .services-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 25px;
+            }
+
+            .service-image {
+                height: 240px;
+            }
+
+            .service h3 {
+                font-size: 1.4rem;
+            }
+        }
+
+        /* Large Desktops (1200px and up) */
+        @media (min-width: 1200px) {
+            .section-title h2 {
+                font-size: 2.8rem;
+            }
+
+            .services-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 30px;
+            }
+
+            .service-image {
+                height: 260px;
+            }
+
+            .service h3 {
+                font-size: 1.5rem;
+                padding: 25px;
+            }
+        }
+
+        /* Extra Large Desktops (1400px and up) */
+        @media (min-width: 1400px) {
+            .container-services {
+                max-width: 1320px;
+            }
+
+            .services-grid {
+                gap: 35px;
+            }
+
+            .service-image {
+                height: 280px;
+            }
+
+            .section-title h2 {
+                font-size: 3rem;
+            }
+        }
+
+        /* Landscape orientation adjustments */
+        @media (max-width: 991px) and (orientation: landscape) {
+            #services {
+                padding: 40px 0;
+            }
+
+            .service-image {
+                height: 180px;
+            }
+
+            .service h3 {
+                padding: 15px;
+                font-size: 1.1rem;
+            }
+        }
+
+        /* High DPI displays */
+        @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+            .service img {
+                image-rendering: -webkit-optimize-contrast;
+            }
+        }
+
+
+
+
+
+
+
+              
+        .main-content {
+            flex: 1;
+            padding: 40px 20px;
+            text-align: center;
+        }
+ 
+        #footer {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            padding: 40px 0;
+            margin-top: 10px;
+        }
+ 
+        .container {
+      
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+ 
+        .social {
+       
+            margin-top: 22px;
+        }
+ 
+        .social ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+ 
+        .social li {
+            display: inline-block;
+        }
+ 
+        .social a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            background: #A7C44C;
+            color: rgb(6, 6, 6);
+            border-radius: 50%;
+            text-decoration: none;
+            font-size: 20px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+ 
+        .social a::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(234, 9, 9, 0.2), transparent);
+            transition: left 0.6s;
+        }
+ 
+        .social a:hover::before {
+            left: 100%;
+        }
+ 
+        .social a:hover {
+            background: #2ecc71;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(46, 204, 113, 0.4);
+        }
+ 
+        /* Specific hover colors for each platform */
+        .social a.facebook:hover {
+            background: #3b5998;
+            box-shadow: 0 8px 25px rgba(59, 89, 152, 0.4);
+        }
+ 
+        .social a.twitter:hover {
+            background: #1da1f2;
+            box-shadow: 0 8px 25px rgba(29, 161, 242, 0.4);
+        }
+ 
+        .social a.instagram:hover {
+            background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+            box-shadow: 0 8px 25px rgba(225, 48, 108, 0.4);
+        }
+ 
+      .social a.pinterest:hover {
+            background: #bd081c;
+            box-shadow: 0 8px 25px rgba(189, 8, 28, 0.4);
+        }
+ 
+ 
+        .social a.linkedin:hover {
+            background: #0077b5;
+            box-shadow: 0 8px 25px rgba(0, 119, 181, 0.4);
+        }
+ 
+      
+        
+ 
+        .footer-text {
+            color: #bdc3c7;
+            font-size: 14px;
+            margin-top: 20px;
+        }
+ 
+        .footer-text a {
+            color: #27ae60;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+ 
+        .footer-text a:hover {
+            color: #2ecc71;
+        }
+ 
+        /* Media Queries for Responsive Design */
+        @media (max-width: 768px) {
+            #footer {
+                padding: 30px 0;
+            }
+ 
+            .social ul {
+                gap: 15px;
+            }
+ 
+            .social a {
+                width: 45px;
+                height: 45px;
+                font-size: 18px;
+            }
+ 
+            .container {
+                padding: 0 15px;
+            }
+ 
+            .footer-text {
+                font-size: 13px;
+            }
+        }
+ 
+        @media (max-width: 480px) {
+            #footer {
+                padding: 25px 0;
+            }
+ 
+            .social ul {
+                gap: 12px;
+            }
+ 
+            .social a {
+                width: 40px;
+                height: 40px;
+                font-size: 16px;
+            }
+ 
+            .container {
+                padding: 0 10px;
+            }
+ 
+            .footer-text {
+                font-size: 12px;
+                line-height: 1.5;
+            }
+        }
+ 
+        @media (max-width: 320px) {
+            .social ul {
+                gap: 8px;
+            }
+ 
+            .social a {
+                width: 35px;
+                height: 35px;
+                font-size: 14px;
+            }
+        }
+ 
+        /* High DPI/Retina displays */
+        @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+            .social a {
+                -webkit-font-smoothing: antialiased;
+                -moz-osx-font-smoothing: grayscale;
+            }
+        }
+ 
+        /* Dark mode support */
+        @media (prefers-color-scheme: dark) {
+            body {
+                background: #1a1a1a;
+                color: #0a0909;
+            }
+            
+            .main-content {
+                background: #1a1a1a;
+            }
+        }
+
+
+
+
+
+
+
+
+        #team {
+            
+            /* padding: 30px 0; */
+            position: relative;
+            overflow: hidden;
+        }
+
+        .overlay {
+            background: rgba(0, 0, 0, 0.1);
+            position: relative;
+            z-index: 1;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            /* padding: 0 20px; */
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+            color: white;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .section-title hr {
+            width: 80px;
+            height: 3px;
+            background: #a7c44c;
+            border: none;
+            margin: 20px auto;
+        }
+
+        .section-title p {
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            justify-items: center;
+        }
+
+        .team-card {
+          /* height: 300px; */
+            background:transparent;
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            width: 100%;
+            /* max-width: 350px; */
+            position: relative;
+            overflow: hidden;
+
+        }
+
+        .team-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .team-card:hover::before {
+            left: 100%;
+        }
+
+        .team-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .team-img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #667eea;
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .team-card:hover .team-img {
+            transform: scale(1.05);
+            border-color: #764ba2;
+        }
+
+        .team-card h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .team-card p {
+            color: #666;
+            font-size: 0.95rem;
+            margin-bottom: 0;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            /* #team {
+                padding: 60px 0;
+            } */
+
+            .container {
+                padding: 0 15px;
+            }
+
+            .section-title {
+                margin-bottom: 40px;
+            }
+
+            .section-title h2 {
+                font-size: 2rem;
+            }
+
+            .section-title p {
+                font-size: 1rem;
+            }
+
+            .team-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .team-card {
+                padding: 25px;
+                max-width: 100%;
+            }
+
+            .team-img {
+                width: 100px;
+                height: 100px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            /* #team {
+                 padding: 40px 0;
+            } */
+
+            .section-title h2 {
+                font-size: 1.8rem;
+                letter-spacing: 1px;
+            }
+
+            .section-title hr {
+                width: 60px;
+            }
+
+            .team-card {
+                padding: 20px;
+                border-radius: 10px;
+            }
+
+            .team-img {
+                width: 80px;
+                height: 80px;
+                margin-bottom: 15px;
+            }
+
+            .team-card h3 {
+                font-size: 1.2rem;
+            }
+
+            .team-card p {
+                font-size: 0.9rem;
+            }
+        }
+
+        /* Tablet specific adjustments */
+        @media (min-width: 769px) and (max-width: 1024px) {
+            .team-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 25px;
+            }
+        }
+
+        /* Large desktop optimization */
+        @media (min-width: 1400px) {
+            .container {
+                max-width: 1400px;
+            }
+        }
+  </style>
+</head>
+
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+  <div class="scroll-indicator">
+    <div class="scroll-progress" id="scrollProgress"></div>
+  </div>
+
+  <!-- Advanced Architectural Header -->
+  <header class="architectural-header" id="mainHeader">
+    <div class="header-wrapper">
+      <a href="#home" class="brand-identity">
+        <div class="logo-icon">
+          <i class="fas fa-drafting-compass"></i>
+        </div>
+        <div class="brand-text">
+          <div class="brand-name">SPACE CRAFT</div>
+          <div class="brand-tagline">ARCHITECTURE</div>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation -->
+      <nav class="primary-navigation">
+        <ul class="nav-menu">
+          <li class="nav-item">
+            <a href="#home" class="nav-link active">
+              <i class="fas fa-home"></i>
+              Home
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#about" class="nav-link active">
+              <i class="fas fa-home"></i>
+              About
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#services" class="nav-link">
+              <i class="fas fa-tools"></i>
+              Services
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#portfolio" class="nav-link">
+              <i class="fas fa-building"></i>
+              Projects
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#team" class="nav-link">
+              <i class="fas fa-users"></i>
+              Team
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#contact" class="nav-link">
+              <i class="fas fa-envelope"></i>
+              Contact
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Mobile Menu Toggle -->
+      <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle mobile menu">
+        <div class="hamburger-icon">
+          <div class="hamburger-line"></div>
+          <div class="hamburger-line"></div>
+          <div class="hamburger-line"></div>
+        </div>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Navigation Overlay -->
+  <div class="mobile-overlay" id="mobileOverlay">
+    <div class="mobile-nav-container">
+      <ul class="mobile-nav-menu">
+        <li class="mobile-nav-item">
+          <a href="#home" class="mobile-nav-link">Home</a>
+        </li>
+        <li class="mobile-nav-item">
+          <a href="#about" class="mobile-nav-link">About</a>
+        </li>
+        <li class="mobile-nav-item">
+          <a href="#services" class="mobile-nav-link">Services</a>
+        </li>
+        <li class="mobile-nav-item">
+          <a href="#portfolio" class="mobile-nav-link">Projects</a>
+        </li>
+        <li class="mobile-nav-item">
+          <a href="#team" class="mobile-nav-link">Team</a>
+        </li>
+        <li class="mobile-nav-item">
+          <a href="#contact" class="mobile-nav-link">Contact</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <header id="header">
+    <div class="intro">
+      <div class="overlay">
+        <div class="container">
+          <div class="row">
+            <div class="intro-text">
+              <!-- <h1><strong>SPACE CRAFT</strong> <span>-</span>Architect & Interior Design Studio</h1> -->
+              <h1><strong>SPACE CRAFT</strong></h1>
+              <h2 style="color: white">
+                Architecture & Interior Design Studio
+              </h2>
+              <!-- <p>Lorem ipsum dolor sit amet consectetur adipiscing.</p> -->
+              <a href="#about" class="btn btn-custom btn-lg page-scroll">Learn More</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- About Section -->
+  <div id="about">
+    <div class="container">
+      <div class="section-title text-center center">
+        <h2>Our Story</h2>
+        <hr />
+      </div>
+      <div class="row">
+        <div class="col-xs-12 col-md-6 text-center">
+          <img src="img/about.jpg" class="img-responsive" alt="" />
+        </div>
+        <div class="col-xs-12 col-md-6">
+          <div class="about-text">
+            <h3>The Studio</h3>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis
+              sed dapibus leo nec ornare diam. Sed commodo nibh ante facilisis
+              bibendum dolor feugiat at. Duis sed dapibus leo nec ornare diam
+              commodo nibh.
+            </p>
+            <h3>How We Work</h3>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis
+              sed dapibus leo nec ornare diam. Sed commodo nibh ante facilisis
+              bibendum dolor feugiat at. Duis sed dapibus leo nec ornare.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+  <!-- Services Section -->
+  <div id="services">
+    <div class="container-services">
+        <div class="section-title">
+            <h2>Our Services</h2>
+            <hr />
+           
+        </div>
+        
+        <div class="services-grid">
+            <div class="service">
+                <div class="service-image">
+                    <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=400&h=300&fit=crop" alt="Architectural Planning" />
+                </div>
+                <h3>Architectural Planning</h3>
+            </div>
+            
+            <div class="service">
+                <div class="service-image">
+                    <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=400&h=300&fit=crop" alt="Interior Design" />
+                </div>
+                <h3>Interior Design</h3>
+            </div>
+            
+            <div class="service">
+                <div class="service-image">
+                    <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=300&fit=crop" alt="Landscape Design" />
+                </div>
+                <h3>Landscape Design</h3>
+            </div>
+            
+            <div class="service">
+                <div class="service-image">
+                    <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=400&h=300&fit=crop" alt="Sanctioning" />
+                </div>
+                <h3>Sanctioning</h3>
+            </div>
+            
+            <div class="service">
+                <div class="service-image">
+                    <img src="https://images.unsplash.com/photo-1541976590-713941681591?w=400&h=300&fit=crop" alt="Supervision" />
+                </div>
+                <h3>Supervision</h3>
+            </div>
+            
+            <div class="service">
+                <div class="service-image">
+                    <img src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=400&h=300&fit=crop" alt="Elevation Design" />
+                </div>
+                <h3>Elevation Design</h3>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+  <!-- Portfolio Section -->
+  <div id="portfolio">
+    <div class="container">
+      <div class="section-title text-center center">
+        <h2>Projects</h2>
+        <hr />
+      </div>
+      <div class="categories">
+        <ul class="cat">
+          <li>
+            <ol class="type">
+              <li>
+                <a href="#" data-filter="*" class="active">All Projects</a>
+              </li>
+              <li>
+                <a href="#" data-filter=".residential">Architectural</a>
+              </li>
+              <li><a href="#" data-filter=".office">Interior</a></li>
+              <li><a href="#" data-filter=".commercial">Commercial</a></li>
+            </ol>
+          </li>
+        </ul>
+        <div class="clearfix"></div>
+      </div>
+
+      <div class="row">
+        <div class="portfolio-items">
+          <div class="col-sm-6 col-md-4 col-lg-4 residential">
+            <div class="portfolio-item">
+              <div class="hover-bg">
+                <a href="img/portfolio/01-large.jpg" title="Project Title" data-lightbox-gallery="gallery1">
+                  <div class="hover-text">
+                    <h4>Project Name</h4>
+                  </div>
+                  <img src="img/portfolio/01-small.jpg" class="img-responsive" alt="Project Title" />
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-4 col-lg-4 commercial">
+            <div class="portfolio-item">
+              <div class="hover-bg">
+                <a href="img/portfolio/02-large.jpg" title="Project Title" data-lightbox-gallery="gallery1">
+                  <div class="hover-text">
+                    <h4>Project Name</h4>
+                  </div>
+                  <img src="img/portfolio/02-small.jpg" class="img-responsive" alt="Project Title" />
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-4 col-lg-4 residential">
+            <div class="portfolio-item">
+              <div class="hover-bg">
+                <a href="img/portfolio/03-large.jpg" title="Project Title" data-lightbox-gallery="gallery1">
+                  <div class="hover-text">
+                    <h4>Project Name</h4>
+                  </div>
+                  <img src="img/portfolio/03-small.jpg" class="img-responsive" alt="Project Title" />
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-4 col-lg-4 residential">
+            <div class="portfolio-item">
+              <div class="hover-bg">
+                <a href="img/portfolio/04-large.jpg" title="Project Title" data-lightbox-gallery="gallery1">
+                  <div class="hover-text">
+                    <h4>Project Name</h4>
+                  </div>
+                  <img src="img/portfolio/04-small.jpg" class="img-responsive" alt="Project Title" />
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-4 col-lg-4 commercial">
+            <div class="portfolio-item">
+              <div class="hover-bg">
+                <a href="img/portfolio/05-large.jpg" title="Project Title" data-lightbox-gallery="gallery1">
+                  <div class="hover-text">
+                    <h4>Project Name</h4>
+                  </div>
+                  <img src="img/portfolio/05-small.jpg" class="img-responsive" alt="Project Title" />
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-4 col-lg-4 office">
+            <div class="portfolio-item">
+              <div class="hover-bg">
+                <a href="img/portfolio/06-large.jpg" title="Project Title" data-lightbox-gallery="gallery1">
+                  <div class="hover-text">
+                    <h4>Project Name</h4>
+                  </div>
+                  <img src="img/portfolio/06-small.jpg" class="img-responsive" alt="Project Title" />
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-4 col-lg-4 office">
+            <div class="portfolio-item">
+              <div class="hover-bg">
+                <a href="img/portfolio/07-large.jpg" title="Project Title" data-lightbox-gallery="gallery1">
+                  <div class="hover-text">
+                    <h4>Project Name</h4>
+                  </div>
+                  <img src="img/portfolio/07-small.jpg" class="img-responsive" alt="Project Title" />
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-4 col-lg-4 residential">
+            <div class="portfolio-item">
+              <div class="hover-bg">
+                <a href="img/portfolio/08-large.jpg" title="Project Title" data-lightbox-gallery="gallery1">
+                  <div class="hover-text">
+                    <h4>Project Name</h4>
+                  </div>
+                  <img src="img/portfolio/08-small.jpg" class="img-responsive" alt="Project Title" />
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-4 col-lg-4 commercial">
+            <div class="portfolio-item">
+              <div class="hover-bg">
+                <a href="img/portfolio/09-large.jpg" title="Project Title" data-lightbox-gallery="gallery1">
+                  <div class="hover-text">
+                    <h4>Project Name</h4>
+                  </div>
+                  <img src="img/portfolio/09-small.jpg" class="img-responsive" alt="Project Title" />
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-4 col-lg-4 office">
+            <div class="portfolio-item">
+              <div class="hover-bg">
+                <a href="img/portfolio/10-large.jpg" title="Project Title" data-lightbox-gallery="gallery1">
+                  <div class="hover-text">
+                    <h4>Project Name</h4>
+                  </div>
+                  <img src="img/portfolio/10-small.jpg" class="img-responsive" alt="Project Title" />
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-4 col-lg-4 office">
+            <div class="portfolio-item">
+              <div class="hover-bg">
+                <a href="img/portfolio/11-large.jpg" title="Project Title" data-lightbox-gallery="gallery1">
+                  <div class="hover-text">
+                    <h4>Project Name</h4>
+                  </div>
+                  <img src="img/portfolio/11-small.jpg" class="img-responsive" alt="Project Title" />
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-4 col-lg-4 residential">
+            <div class="portfolio-item">
+              <div class="hover-bg">
+                <a href="img/portfolio/12-large.jpg" title="Project Title" data-lightbox-gallery="gallery1">
+                  <div class="hover-text">
+                    <h4>Project Name</h4>
+                  </div>
+                  <img src="img/portfolio/12-small.jpg" class="img-responsive" alt="Project Title" />
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+  <div id="team">
+    <div class="overlay">
+        <div class="container">
+            <div class="section-title">
+                <h2>Meet the Team</h2>
+                <hr />
+               
+            </div>
+            <div class="team-grid">
+                <div class="team-card">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=300&fit=crop&crop=face" alt="Paresh Gaidhane" class="team-img" />
+                    <h3>Paresh Gaidhane</h3>
+                    <p>Architect & Interior Designer</p>
+                </div>
+                <div class="team-card">
+                    <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=300&h=300&fit=crop&crop=face" alt="Mike Doe" class="team-img" />
+                    <h3>Mike Doe</h3>
+                    <p>Structure Designer</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+  <!-- Contact Section -->
+  <div id="contact">
+    <div class="container">
+      <br>
+      <div class="section-title text-center">
+        <h2>Contact Us</h2>
+        <hr />
+      </div>
+      <div class="col-md-4">
+        <h3>Contact Info</h3>
+        <div class="contact-item">
+          <span>Address</span>
+          <p>
+            14 Ramdeobaba Layout,<br />
+            Katol
+          </p>
+        </div>
+        <div class="contact-item">
+          <span>Email</span>
+          <p>pareshgaidhane@gmail.com</p>
+        </div>
+        <div class="contact-item">
+          <span>Phone</span>
+          <p>+919922229986</p>
+        </div>
+      </div>
+      <div class="col-md-8">
+        <div class="map-container">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31446.985685508167!2d78.56999261504711!3d21.276603831404756!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bd459ded1faa031%3A0x2199f0f7535c15c8!2sKatol%2C%20Maharashtra%20441302!5e1!3m2!1sen!2sin!4v1752484650472!5m2!1sen!2sin"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+        </div>
+    </div>
+    </div>
+    <div id="footer">
+      <div class="container text-center">
+          <div class="social">
+              <ul>
+                  <li>
+                      <a href="#" class="facebook" title="Facebook">
+                          <i class="fab fa-facebook-f"></i>
+                      </a>
+                  </li>
+                  <li>
+                      <a href="#" class="twitter" title="Twitter">
+                          <i class="fab fa-twitter"></i>
+                      </a>
+                  </li>
+                  <li>
+                      <a href="#" class="instagram" title="Instagram">
+                          <i class="fab fa-instagram"></i>
+                      </a>
+                  </li>
+                  <li>
+                      <a href="#" class="pinterest" title="Pinterest">
+                          <i class="fab fa-pinterest-p"></i>
+                      </a>
+                  </li>
+                  
+                  <li>
+                      <a href="#" class="linkedin" title="LinkedIn">
+                          <i class="fab fa-linkedin-in"></i>
+                      </a>
+                  </li>
+                  
+                 
+              </ul>
+          </div>
+          
+      </div>
+  </div>
+    <script type="text/javascript" src="js/jquery.1.11.1.js"></script>
+    <script type="text/javascript" src="js/bootstrap.js"></script>
+
+    <script type="text/javascript" src="js/jquery.isotope.js"></script>
+
+    <script type="text/javascript" src="js/main.js"></script>
+    <script src="js/header.js"></script>
+</body>
+
+</html>
